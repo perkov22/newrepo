@@ -1,0 +1,199 @@
+http://fperko.mojweb.com.hr/
+
+
+
+/*
+Theme Name: tema Route66
+Author: Filip
+Description: Tema namjenjena web stranicama bu
+Version: 1.1
+Tags: two-columns,right-sidebar,grey,sidebar,yellowgreen,header
+*/
+
+
+
+
+
+/* CSS */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Bilbo+Swash+Caps|Romanesco');
+@import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Romanesco');
+*{margin:0;padding:0;box-sizing:border-box;}
+/* ureðivanje html dokumenta *********************************************************************** */
+
+body{background-color:#BDBDBD;
+font-family:'Open Sans Condensed', sans-serif;
+font-size:16px;
+color:#1C1C1C;}
+img{max-width:100%;height:auto;}
+a{text-decoration:none;}
+#content{width:75%;
+float:left;background-color:#BDBDBD;border-right:1px solid #EEE;}
+
+#sidebar{width:25%;
+float:right;background-color:#BDBDBD}
+
+#content,#sidebar{padding:15px}
+.wrapper{max-width:100%;
+margin:auto auto;}
+
+.clearfix:after{content:"";
+display:block;
+clear:both;
+height:0;
+font-size:0;
+visibility:hidden;
+}
+.alignleft{float:left;margin:5px 10px 5px 0}
+.alignright{float:right;margin:5px 0 10px 10px}
+.aligncenter{display:block;
+margin:5px auto 10px auto;}
+
+
+/* navigacija */
+#menu{padding:5px;background-image:url(images/header.jpg);border-bottom:1px solid #EEE;z-index:999;position:fixed;width:100%}
+#menu ul{list-style-type:none ;width:25%; float:right}
+#mobileButton{display:none;}
+#menu li{display:inline;margin:auto;width:50%;
+border-radius:20px;padding:10px}
+
+#menu li.current_page_item{background-color:#BDBDBD}
+
+
+#menu a{font-size:20px;color:#FAFAFA}
+#menu a:visited{color:#FAFAFA;}
+#menu a:hover{color:#585858;}
+
+/* tražilica ******************************* */
+#logo{width:75%;float:left;}
+#logo a{font-size:20px;margin-left:15px}
+
+
+
+
+
+/* PAGE HEADER */
+#pageHeader div{margin:auto;/* centriranje za Chrome, Safari, Edge,   Operu i FF  */
+align-self:center; /* centriranje za IE*/}
+#pageheader{height:700px;display:flex;text-align:center;background-color:green;background-image:url(images/header.jpg);
+background-position:center center;background-repeat:no-repeat;background-size:cover;} 
+#pageheader div{margin:auto; align-self:center;}
+#pageheader h1{font-size:110px;font-family: 'Alegreya Sans SC', sans-serif;}
+#pageheader h2{font-size:20px;font-family: 'Alegreya Sans SC', sans-serif;color:#EEE}
+#pageheader a{color:#EEE}
+
+
+/* main ******************************************************************** */
+
+article.post{margin-bottom:10px;}
+
+article.post img{width:33%;
+float:left;
+margin-right:2%;}
+
+article.post h1,article.post p,article.post a{width:65%;
+float:right;font-family: 'Alegreya Sans SC', sans-serif;font-size:19px}
+
+article.post a{color:#2E2E2E;
+font-size:12px;
+font-family: 'Amatic SC', cursive;
+text-align:right;}
+
+article.post a:visited{color:#666;}
+article.post a:hover{color:#FFF;}
+
+
+/* aside **************************************************************  */
+
+#sidebar h2{margin-bottom:10px;}
+
+#sidebar ul{margin-bottom:20px;
+list-style-type:none;}
+
+#sidebar a{color:#2E2E2E;
+margin-bottom:10px;
+border-bottom:1px solid #181907;
+display:block;font-family: 'Alegreya Sans SC';font-size:18px}
+
+#sidebar a:visited{color:#666;}
+#sidebar a:hover{color:#FFF;}
+
+
+/* PAGE FOOTER */
+#pagefooter{background-color:#2E2E2E;margin:auto;padding:40px}
+#pagefooter ul{text-align:center;list-style-type:none;font-size:25px;}
+#pagefooter h1{text-align:center;font-size:30px;font-family: 'Alegreya Sans SC', sans-serif;border-bottom:1px solid #EEE;color:#EEE}
+#copy{text-align:center;background-color:#F7F2E0;color:black;max-width:100%;padding:50px;}
+
+#pagefooter a {color:#EEE;font-size:16px}
+
+#pagefooter a:hover{color:#BDBDBD}
+
+
+/* CSS Media Queries *********************************************************************** *0000000000++++++++++++++++++++
+'+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media (min-width:1024px) {
+	
+#menu ul, #logo{display:block !important;}
+	
+	
+}
+
+
+
+/* zahvaca uredaje do 1023px ***** */
+@media (max-width:1023px) {
+	
+	#content, #sidebar, #pagefooter section{width:100%;float:none;}
+article.post img,article.post h1,article.post p,article.post a{width:49%;}
+article.post a{clear:both;}
+#content{border-right:none}
+h3{padding:45px;font-size:10px;text-align:center;background-color:#181907;border-bottom:1px solid #EEE}
+
+/* mobile manu */
+#mobileButton{display:block;}
+#menu{margin-bootom:15px}
+#menu ul, #logo{width:73%;float:none;
+text-align:center;display:none;}
+#menu li {display:block;margin-right:0;padding:0;border-radius:0;}
+#menu li.current_page_item{background:none;}
+#menu a{display:block;padding:10px;margin-bottom:10px;border-bottom:1px solid #EEE}
+#search-icon{display:none}
+#s{display:block;margin:20px auto 8px auto;border-radius:20px;font-size:19px;padding:1px;}
+ }
+
+/* zahvaca uredaje do 767px ***** */
+@media (max-width:767px) {
+	input{outline:0;}
+	article.post img,article.post h1,article.post p,article.post a{width:100%;float:none}
+	#pagefooter ul{width:100%;float:none}
+	
+	
+	
+	article.post a{color:#666;display:block;
+	margin:10px 10px;
+	text-align:center;
+	padding:5px 0;
+	border:2px solid #DDD;
+	border-radius:10px;font-size:16px;}
+	
+	#sidebar a, #pagefooter a{margin-bootom:15px;
+	padding:10px 0;
+	display:block}
+	
+	#pageheader{height:300px;}
+	
+	#pageheader h1{font-size:45px;}
+	
+	#pageheader h2{font-size:20px}
+	
+}
+
+/* zahvaca uredaje do 479px ***** */
+@media (max-width:479px) {
+	
+	img{display:none;}
+	
+}
+
