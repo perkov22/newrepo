@@ -1,0 +1,108 @@
+http://fperko.mojweb.com.hr/
+
+<!doctype html>
+<html>
+   <head>
+     <meta charset="utf-8">
+	 <meta name="viewport" content="width=divice-width,initial-scale=1.0">
+	 <meta name="description" content="">
+	 <meta name="author" content="Filip.P">
+	 <meta name="generator" content="WordPress<?php bloginfo('version'); ?>">
+		<title><?php wp_title(); ?><?php bloginfo('name'); ?></title>
+		<link href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" rel="stylesheet">
+	 <script src="http://use.fontawesome.com/d8cc873363.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 
+	    <script>
+	 
+	       $(document).ready(function(){		   
+		      $('#mobileButton').click(function(){
+			  
+			  $('#menu ul, #searchform').slideToggle();
+			  });
+		   
+		   })
+	 
+	 </script>
+	 <?php wp_head(); ?>
+   </head>
+   <body>
+         <nav id="menu">
+		             <div class="wrapper clearfix">
+                 <div id="mobileButton">
+			<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+														
+			  </div>
+	 <section id="logo"> <a href="<?php bloginfo('url'); ?>"><i class="fa fa-money" aria-hidden="true"></i></a></section>
+					 <?php wp_page_menu( 'show_home=Home' ); ?>
+						
+					 </div>
+		       <!-- div.wrapper end ************************************ -->
+		 </nav> 
+		 <!-- nav end ************************************************************************************************************************************************-->
+      <div>       
+         <h3><?php bloginfo( 'description' ); ?></h3>	
+		 </div>
+
+		 		<div class="wrapper clearfix">
+			<main id="content">
+			          
+					  <?php if(have_posts()) : ?>
+  		<?php while(have_posts()) : the_post(); ?>
+  			<div class="post" >
+    				<h1><?php the_title(); ?></h1>
+    				<?php the_content(); ?>
+    			</div>
+  		<?php endwhile; ?>
+  		<?php endif; ?>
+			
+			
+			   
+			</main>
+			<!-- main #content end -->
+			<aside id="sidebar">
+			 <?php get_sidebar(); ?>
+			
+			</aside>
+			<!-- aside #sidebar end -->	
+		</div>
+		<!-- div .wrapper end -->
+		<?php get_footer(); ?>
+
+
+
+
+
+FUNCTION PHP
+
+
+<?php
+
+/* registriranje sidebara */
+
+if ( function_exists('register_sidebars') )
+
+    register_sidebars(1);
+
+/* funkcija excerpt i readmore link */
+
+function excerpt_read_more_link($output) {
+ global $post;
+ return $output . '<a href="'. get_permalink($post->ID) . '"> Read more...</a>';
+}
+add_filter('the_excerpt', 'excerpt_read_more_link');
+
+function custom_excerpt_length( $length ) {
+	return 55;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+/* featured image */ 
+
+add_theme_support( 'post-thumbnails' );
+
+
+?>
+
+
